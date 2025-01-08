@@ -1,0 +1,228 @@
+/* General color and font settings */
+:root {
+    --primary-color: #f9b17a; /* Accent color */
+    --secondary-color: #2d3250; /* Dark background */
+    --tertiary-color: #424769; /* Medium dark */
+    --light-color: #676f9d; /* Light blue-gray */
+    --background-color: #ffffff; /* White */
+    --text-color: #f9b17a; /* Accent for text */
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--tertiary-color);
+    padding: 1rem 2rem;
+}
+
+header .logo {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+header nav ul li a {
+    color: var(--background-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 2rem;
+}
+
+h1 {
+    color: var(--primary-color);
+}
+
+.container {
+    display: flex;
+    gap: 2rem;
+}
+
+.listings {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.pet-card {
+    background-color: var(--tertiary-color);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.pet-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.pet-card h2 {
+    color: var(--primary-color);
+}
+
+.pet-card button {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.pet-card button:hover {
+    background-color:rgb(65, 196, 220); /* Darker shade */
+}
+
+.search {
+    flex: 1;
+    background-color: var(--tertiary-color);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.search h2 {
+    color: var(--primary-color);
+}
+
+.search label, .search input, .search button {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    color: var(--background-color);
+}
+
+.search input {
+    padding: 0.3rem;
+    border: 1px solid var(--light-color);
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+}
+
+.search button {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.search button:hover {
+    background-color: rgb(65, 196, 220);
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.pagination button {
+    background-color: var(--tertiary-color);
+    color: var(--background-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination span {
+    color: var(--primary-color);
+
+    font-weight: bold;
+}
+
+.form-container {
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    margin: 0 auto; /* Center horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center vertically */
+}
+
+.form-container h1 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-container label {
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-top: 1rem;
+    display: block;
+    text-align: left;
+}
+
+.form-container input[type="text"],
+.form-container input[type="number"],
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--light-color);
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+}
+
+.form-container button.submit-btn {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.form-container button.submit-btn:hover {
+    background-color: rgb(65, 196, 220); /* Slightly darker shade of primary */
+}
+
+.form-container .back-link {
+    color: var(--primary-color);
+    display: block;
+    margin-top: 1rem;
+    text-decoration: none;
+}
+
+.form-container .back-link:hover {
+    text-decoration: underline;
+}

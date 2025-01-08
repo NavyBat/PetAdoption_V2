@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Events</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="./js/view-event.js" defer></script>
+    <style>
+        /* Styles for the Event List page */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        /* Styles for the table */
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: rgb(65, 196, 220);
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+
+        .back-button {
+    display: inline-block; 
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: rgb(65, 196, 220);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    width: auto;
+}
+
+        .back-button:hover {
+            background-color: rgb(65, 196, 220);
+        }
+    </style>
+    <script src="./js/view-event.js" defer></script>
+
+</head>
+ 
+<body onload="loadEvents()">
+        
+            <h1>Event List</h1>
+            <table id="eventTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Location</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Instructions</th>
+                    </tr>
+                </thead>
+                <tbody id="eventTableBody">
+
+                </tbody>
+            </table>
+
+
+            <a href="index.html" class="back-button">Back to Home</a>
+        </body>
+
+</html>

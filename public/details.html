@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Details</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/details.js" defer></script>
+</head>
+<body>
+    <h1>Pet Details</h1>
+    <div id="pet-details-container">
+        <img id="pet-picture" alt="Pet image" style="max-width: 100%; height: auto;">
+        <div id="pet-info">
+            <h2 id="pet-name" class="pet-name"></h2>
+            <p><strong>Breed:</strong> <span id="pet-breed"></span></p>
+            <p><strong>Age:</strong> <span id="pet-age"></span></p>
+            <p><strong>Gender:</strong> <span id="pet-gender"></span></p>
+            <p><strong>Price:</strong> <span id="pet-price"></span></p>
+            
+        </div>
+    </div>
+    <button id="edit-button" style="display:none;">Edit</button>
+
+    <style>
+        .back-button {
+            display: block;
+            width: 100px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <a href="index.html" class="back-button">Back to Home</a>
+</body>
+</html>

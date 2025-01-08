@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption Paradise</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/view-listing.js" defer></script>
+</head>
+
+<body onload="loadPetListing()">
+    <div id="navi">
+        <div id="title">
+            <img id="pawImg" src="images/paw.png">
+            <h2>PET LISTING</h2>
+            <img id="pawImg" src="images/paw.png">
+        </div>
+        <div>
+            <button onclick="window.location.href='create.html'" id="createListingButton">CREATE LISTING</button>
+            <button onclick="window.location.href='events.html'">AddEvent</button>
+            <button onclick="window.location.href='viewevent.html'">View Event</button>
+        </div>
+    </div>
+
+    <button onclick="openFilterModal()"> FILTER</button>
+    <div id="container"></div>
+
+
+    <div id="filterModal">
+        <div id="modalContent">
+            <span id="closeButton" onclick="closeFilterModal()">&times;</span>
+            <h2>FILTER</h2>
+            <div id="type">
+                <label>TYPE</label><br>
+                <div id="typeButton">
+                    <button onclick="selectedFilter(this,'type')">ALL</button>
+                    <button onclick="selectedFilter(this,'type')">DOG</button>
+                    <button onclick="selectedFilter(this,'type')">CAT</button>
+                    <button onclick="selectedFilter(this,'type')">FISH</button>
+                </div>
+            </div>
+            <div id="breed" style="display:none">
+                <label>BREED</label><br>
+                <select id="breedSelect" onchange="selectedFilter(this, 'breed')">
+                </select>
+            </div>
+
+            <div>
+                <label>AGE</label><br>
+                <div id="ageButton">
+                    <button onclick="selectedFilter(this,'age')">ANY</button>
+                    <button onclick="selectedFilter(this,'age')">1-4</button>
+                    <button onclick="selectedFilter(this,'age')">4-10</button>
+                    <button onclick="selectedFilter(this,'age')">10+</button>
+                </div>
+            </div>
+            <div>
+                <label>GENDER</label><br>
+                <div id="genderButton">
+                    <button onclick="selectedFilter(this,'gender')">ANY</button>
+                    <button onclick="selectedFilter(this,'gender')">MALE</button>
+                    <button onclick="selectedFilter(this,'gender')">FEMALE</button>
+                </div>
+            </div>
+            <div id="price">
+                <label>PRICE</label><br>
+                <span>MIN</span><input id="minPrice" placeholder="Min Price" oninput="validatePrice(this)">
+                <span> - MAX</span><input id="maxPrice" placeholder="Max Price" oninput="validatePrice(this)"><br>
+                <span id="priceError"></span>
+
+            </div>
+            <div id="apply">
+                <button id="applyButton" onclick="applyFilter()">APPLY FILTER</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

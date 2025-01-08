@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Pet Adoption Event</title>
+    <link rel="stylesheet" href="./css/style.css">`
+    <script src="./js/addEvent.js"></script>
+</head>
+<body class="event" onload="viewEvents()">
+    <form class="event-form" id="eventForm">
+        <h2>Create Pet Adoption Event</h2>
+        <div class="form-group">
+            <label for="title">Event Title</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" required>
+        </div>
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+            <label for="time">Time</label>
+            <input type="time" id="time" name="time" required>
+        </div>
+        <div class="form-group">
+            <label for="instruction">Additional Instructions</label>
+            <textarea id="instruction" name="instruction" rows="3"></textarea>
+        </div>
+        
+        <!-- Button container to stack buttons vertically -->
+        <div class="button-container">
+            <button type="button" class="submit-btn" onclick="addEvents()">Create Event</button>
+            
+            <button type="button" class="back-button" onclick="window.location.href='viewevent.html';">Back to Home</button>
+
+        </div>
+    </form>
+
+    
+</body>
+</html>

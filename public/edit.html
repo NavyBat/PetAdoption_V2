@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Edit Pet Record</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/editPet.js" defer></script>
+    <style>
+        :root {
+            --primary-color: #f9b17a;
+            --secondary-color: #2d3250;
+            --tertiary-color: #424769;
+            --light-color: #676f9d;
+            --background-color: #fffdff;
+            --text-color: #f9b17a;
+            --form-background-color: #fcfbf4;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .form-container {
+            border: 2px solid var(--tertiary-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            background-color: var(--form-background-color);
+            text-align: left;
+        }
+
+        .form-container label {
+            display: block;
+            margin: 10px 0 5px;
+            color: var(--secondary-color);
+        }
+
+        .form-container input,
+        .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid var(--light-color);
+            border-radius: 5px;
+            background-color: var(--secondary-color);
+            color: var(--background-color);
+        }
+
+        .form-container button {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .form-container button:hover {
+            background-color: #e89a61;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin: auto;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(65, 196, 220);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            width: auto;
+        }
+        .up-btn {
+            background-color: rgb(65, 196, 220);
+            color: #2d3250;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Edit Pet Record</h1>
+    <form class="form-container" onsubmit="updatePet(); return false;">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="breed">Breed:</label>
+        <input type="text" id="breed" required>
+
+        <label for="age">Age:</label>
+        <input type="text" id="age" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" required placeholder="Enter price">
+
+        <label for="picture">Picture URL:</label>
+        <input type="text" id="picture" required>
+
+        <button class="up-btn" type="submit">Update Pet</button>
+        <a id="backButton" class="back-button">Back</a>
+    </form>
+
+
+    <script>
+
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+
+        function setBackButton() {
+            const petId = getQueryParam('id');
+            const backButton = document.getElementById('backButton');
+            if (petId) {
+                backButton.href = `details.html?id=${petId}`;
+            } else {
+                backButton.href = 'index.html';
+            }
+        }
+
+        // Call setBackButton on page load
+        window.onload = setBackButton;
+    </script>
+
+</body>
+
+</html>

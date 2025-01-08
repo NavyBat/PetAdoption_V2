@@ -1,0 +1,112 @@
+<html>
+
+<head>
+
+    <title>PawPalace - Create Pet</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/createListing.js" defer></script>
+    <script>
+        const breeds = {
+            Dog: [
+                "Labrador", "Beagle", "Bulldog", "Poodle", "German Shepherd",
+                "Golden Retriever", "Dachshund", "Pug", "Boxer", "Chihuahua",
+                "Shih Tzu", "Siberian Husky", "Cocker Spaniel", "Great Dane",
+                "Border Collie", "Rottweiler"
+            ],
+            Cat: [
+                "Siamese", "Persian", "Maine Coon", "Bengal", "Ragdoll",
+                "British Shorthair", "Sphynx", "Scottish Fold", "Abyssinian",
+                "American Shorthair", "Birman", "Savannah", "Russian Blue",
+                "Norwegian Forest Cat", "Oriental Shorthair"
+            ],
+            Fish: [
+                "Goldfish", "Betta", "Guppy", "Angelfish", "Tetra",
+                "Molly", "Oscar", "Swordtail", "Zebra Danio", "Platy",
+                "Discus", "Corydoras", "Neon Tetra", "Koi", "Clownfish",
+                "Gourami"
+            ]
+        };
+
+        function updateBreeds() {
+            const type = document.getElementById('type').value;
+            const breedSelect = document.getElementById('breed');
+            breedSelect.innerHTML = "<option value='' disabled selected>Select Breed</option>";
+
+            breeds[type].forEach(breed => {
+                const option = document.createElement('option');
+                option.value = breed;
+                option.textContent = breed;
+                breedSelect.appendChild(option);
+            });
+        }
+
+       
+    </script>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h1>Create a Pet Record</h1>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" required placeholder="Enter pet's name">
+
+            <label for="type">Type:</label>
+            <select id="type" onchange="updateBreeds()" required>
+                <option value="" disabled selected>Select Type</option>
+                <option value="Dog">Dog</option>
+                <option value="Cat">Cat</option>
+                <option value="Fish">Fish</option>
+            </select>
+
+            <label for="breed">Breed:</label>
+            <select id="breed" required>
+                <option value="" disabled selected>Select Breed</option>
+            </select>
+
+            <label for="age">Age:</label>
+            <select name="age" id="age" required>
+                <option value="all" disabled selected>Select Age</option>
+                <option value="1-4">1-4 months</option>
+                <option value="4-10">4-10 months</option>
+                <option value="10+">10 months+</option>
+            </select>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <label for="price">Price:</label>
+            <input type="text" id="price" required placeholder="Enter price (in SGD)">
+
+            <label for="imageUrl">Image URL:</label>
+            <input type="text" id="imageUrl" name="imageUrl" placeholder="Image URL">
+
+            <p align="right" id="message" class=""></p>
+
+        </form>
+        <button type="button" onclick="addPet()" class="submit-btn">Submit</button>
+        <p><a href="index.html" class="back-link">Go back to Home Page</a></p>
+    </div>
+
+    <div>
+        <h2>Pet Listings</h2>
+        <table id="listingsTable">
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Breed</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Price</th>
+                <th>Image</th>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>

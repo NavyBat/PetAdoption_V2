@@ -3,7 +3,7 @@ services:
    build:
      context: .
      dockerfile: Dockerfile 
-   image: dariusfoo11/pet-rms-docker-img:v7
+   image: dariusfoo11/pet-rms-docker-img:v8
    container_name: pet-rms-docker-container
    ports:
      - "8000:5050"

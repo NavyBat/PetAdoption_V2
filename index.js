@@ -27,6 +27,9 @@ app.use(bodyParser.json());
 app.use(express.static(path.join("./public")));
 app.use(express.json());
 
+const statusMonitor = require('express-status-monitor');
+app.use(statusMonitor());
+
 
 // Route for homepage
 app.get('/', (req, res) => {
